@@ -1,236 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J. Sebastian Mateus | IT/Cloud Professional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-
-        /* Utility Classes */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section {
-            padding: 4rem 0;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            text-align: center;
-            padding: 6rem 0;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-15px);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline-item {
-            background: white;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: relative;
-            border-left: 3px solid #3498db;
-        }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J. Sebastian Mateus | IT/Cloud Technologies Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #3498db;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --white: #fff;
+    }
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+    }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Sticky Navigation */
+    header nav {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+    }
+    nav li { margin: 0 1rem; }
+    nav a {
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: var(--primary); }
+    
+    /* Container & Sections */
+    .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
+    .section { padding: 4rem 0; }
+    
+    /* Header / Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--dark), var(--primary));
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 0 4rem;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; animation: fadeInDown 1s ease forwards; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1rem; animation: fadeInUp 1s ease forwards; }
+    .contact-details { font-size: 1rem; animation: fadeInUp 1s ease forwards; }
+    
+    /* Section Headings */
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    /* Resume Content */
+    .resume-section {
+      margin-bottom: 3rem;
+    }
+    .resume-section h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .resume-section p, 
+    .resume-section li { margin-bottom: 0.5rem; }
+    .list { list-style: none; padding-left: 1rem; }
+    .list li::before {
+      content: "• ";
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    /* Timeline / Work Experience */
+    .experience-item {
+      background: var(--white);
+      border-left: 3px solid var(--primary);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    
+    /* Reveal Animation */
+    .reveal.active { transform: translateY(0); opacity: 1; }
+    
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p, .contact-details { font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <h1 class="reveal">J. Sebastian Mateus</h1>
-            <p class="reveal">IT/Cloud Technologies Professional</p>
-            <div class="reveal">
-                <i class="fas fa-globe"></i> Bilingual (English/Spanish) 
-                <i class="fas fa-cloud"></i> Azure | AWS | DevOps
-            </div>
-        </div>
-    </header>
-
-    <!-- Skills Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="reveal">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card reveal">
-                    <h3><i class="fas fa-cloud"></i> Cloud Technologies</h3>
-                    <ul>
-                        <li>Azure Cloud</li>
-                        <li>AWS</li>
-                        <li>Microsoft Intune</li>
-                        <li>GitHub</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-card reveal">
-                    <h3><i class="fas fa-network-wired"></i> Networking</h3>
-                    <ul>
-                        <li>TCP/IP</li>
-                        <li>DNS/DHCP</li>
-                        <li>Firewalls</li>
-                        <li>Virtualization</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card reveal">
-                    <h3><i class="fas fa-tools"></i> Hardware</h3>
-                    <ul>
-                        <li>Device Repairs</li>
-                        <li>PC Assembly</li>
-                        <li>Diagnostics</li>
-                        <li>Mobile Systems</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="reveal">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <h3>Desktop Configuration Technician II</h3>
-                    <p>Tekstream Solutions | 2024 - Present</p>
-                    <ul>
-                        <li>Configured enterprise devices using Intune/Autopilot</li>
-                        <li>Managed IT requests via ServiceNow</li>
-                        <li>Implemented security compliance audits</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item reveal">
-                    <h3>Bilingual Technical Support Analyst</h3>
-                    <p>Assurant | 2022 - 2024</p>
-                    <ul>
-                        <li>Provided bilingual support for T-Mobile</li>
-                        <li>Diagnosed multi-platform issues</li>
-                        <li>Utilized remote access tools</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="reveal">Get in Touch</h2>
-            <div class="contact-info reveal">
-                <p><i class="fas fa-envelope"></i> contact@sebastianmateus.com</p>
-                <p><i class="fas fa-phone"></i> +1 470 800 1046</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Scroll Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        function checkScroll() {
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
+  <!-- Navigation -->
+  <header>
+    <nav class="container">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1 class="reveal">J. Sebastian Mateus</h1>
+      <p class="reveal">IT/Cloud Technologies Professional</p>
+      <div class="contact-details reveal">
+        <p>Atlanta, GA 30339</p>
+        <p><i class="fas fa-envelope"></i> contact@sebastianmateus.com &nbsp;&nbsp; <i class="fas fa-phone"></i> +1 470 800 1046</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Professional Summary -->
+  <section id="summary" class="section">
+    <div class="container resume-section reveal">
+      <h2>Professional Summary</h2>
+      <p>
+        Seasoned Technology professional with 5+ years of experience supporting hardware & software. My professional goal is to become an expert in Cloud platforms like Azure and AWS, while enhancing skills in enterprise IT Infrastructure Management, Networking, Cybersecurity, and Hardware. I thrive on challenges that sharpen my problem-solving skills and have a keen adaptability that fuels my commitment to learning emerging technologies.
+      </p>
+      <p>Fluent in both English and Spanish.</p>
+    </div>
+  </section>
+  
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container resume-section reveal">
+      <h2>Skills</h2>
+      <h3>Interests</h3>
+      <ul class="list">
+        <li>System Engineering, Dev/Ops, APIs, Identity &amp; Access Management, Automation</li>
+      </ul>
+      <h3>Networking</h3>
+      <ul class="list">
+        <li>TCP/IP, DNS, DHCP, OSI Model, Firewalls, IP Filtering (NSGs), Virtualization</li>
+      </ul>
+      <h3>Technologies</h3>
+      <ul class="list">
+        <li>Windows, Azure Cloud, Microsoft 365, AWS, Intune, GitHub, Generative AI</li>
+      </ul>
+      <h3>Operating Systems</h3>
+      <ul class="list">
+        <li>Windows, MacOS, Android, iOS, Linux</li>
+      </ul>
+      <h3>Hardware Skills</h3>
+      <ul class="list">
+        <li>Mobile Device Repairs, PC Hardware Assembly, Hardware Diagnosis</li>
+      </ul>
+      <h3>CRM &amp; Ticketing Systems</h3>
+      <ul class="list">
+        <li>Salesforce, Zendesk, ServiceNow</li>
+      </ul>
+      <h3>Communication Tools</h3>
+      <ul class="list">
+        <li>Slack, Outlook, Microsoft Teams, Cisco Jabber</li>
+      </ul>
+      <h3>Soft Skills</h3>
+      <ul class="list">
+        <li>Active Listening, Empathy, Clear Communication, Adaptability, Conflict Resolution, Reliability, Resilience, Resourcefulness</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Work Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="reveal">Work Experience</h2>
+      
+      <div class="experience-item reveal">
+        <h3>Desktop Configuration Technician II</h3>
+        <p><strong>Tekstream Solutions, Atlanta, GA</strong> — November 2024 - Present</p>
+        <p><em>Assigned to Chick-Fil-A Inc - Contract</em></p>
+        <ul class="list">
+          <li>Configured and deployed enterprise desktops and mobile devices using MDM tools like Intune, Microsoft Autopilot, and Entra in hybrid environments.</li>
+          <li>Ensured security compliance by auditing devices with Intune, Workspace ONE, Carbon Black, and Azure Security Center.</li>
+          <li>Managed IT requests, device staging, and inventory through ServiceNow.</li>
+          <li>Led Hardware Asset Management (HAM) initiatives to improve tracking and lifecycle management.</li>
+          <li>Streamlined operations with IT documentation and provisioning guides.</li>
+          <li>Provided credential management support with SailPoint and Entra ID.</li>
+          <li>Collaborated on cross-functional projects to enhance hybrid cloud infrastructure.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item reveal">
+        <h3>Bilingual Technical Support Specialist</h3>
+        <p><strong>CDE Inc., Marietta, GA</strong> — July 2024 - November 2024</p>
+        <ul class="list">
+          <li>Provided technical support for EBT, WIC, ECC, and POS systems.</li>
+          <li>Troubleshot hardware, software, and network issues.</li>
+          <li>Resolved merchant inquiries efficiently using CRM and ticketing systems.</li>
+          <li>Maintained performance metrics and collaborated with internal teams.</li>
+          <li>Processed equipment orders as needed.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item reveal">
+        <h3>Bilingual Technical Support Analyst</h3>
+        <p><strong>Assurant, Atlanta, GA</strong> — June 2022 - July 2024</p>
+        <ul class="list">
+          <li>Provided bilingual technical support primarily for T-Mobile customers.</li>
+          <li>Supported multiple operating systems including Microsoft, MacOS, Android, and iOS.</li>
+          <li>Diagnosed and resolved incidents across various platforms.</li>
+          <li>Utilized remote access tools for efficient support.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item reveal">
+        <h3>Bilingual Medical Collections &amp; Billing Agent</h3>
+        <p><strong>Hollis Cobb Associates, Atlanta, GA</strong> — April 2021 - June 2022</p>
+        <ul class="list">
+          <li>Managed accounts receivable for Northside, Well Star, and Grady hospitals.</li>
+          <li>Handled an average of 200 calls per day in collections.</li>
+          <li>Secured patient payments using strict security protocols.</li>
+          <li>Coordinated with the AR department for insurance claim submissions.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item reveal">
+        <h3>Field Repair Technician for Device Insurance Claims</h3>
+        <p><strong>Asurion, Atlanta, GA</strong> — October 2019 - April 2021</p>
+        <ul class="list">
+          <li>Performed 1000+ certified repairs on mobile devices across multiple brands.</li>
+          <li>Provided on-site support and repair services for device insurance claims.</li>
+          <li>Managed repairs, sales, and POS system operations.</li>
+          <li>Mentored new hires to improve team competency.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item reveal">
+        <h3>Mobile Device and Computer Technician</h3>
+        <p><strong>uBreakiFix, Duluth, GA</strong> — July 2019 - October 2019</p>
+        <ul class="list">
+          <li>Repaired 500+ mobile electronics and computers.</li>
+          <li>Conducted authorized repairs using official parts and software.</li>
+          <li>Managed back-of-house operations.</li>
+          <li>Provided leadership support when needed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Education -->
+  <section id="education" class="section">
+    <div class="container resume-section reveal">
+      <h2>Education</h2>
+      <p><strong>SAE Institute of Technology</strong> — Diploma in Audio Engineering (2012-2013)</p>
+    </div>
+  </section>
+  
+  <script>
+    // Reveal on Scroll
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        if(el.getBoundingClientRect().top < windowHeight - 100) {
+          el.classList.add('active');
         }
-
-        window.addEventListener('scroll', checkScroll);
-        checkScroll(); // Initial check
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+    
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -97,6 +97,106 @@
       opacity: 0;
       transition: transform 0.4s ease, opacity 0.4s ease;
     }
+
+    /* Footer Styles */
+.footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.social-icons {
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--white);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Tabs Container */
+.skills-tabs {
+  margin-top: 2rem;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 1rem;
+  padding: 0;
+  justify-content: center;
+}
+.tabs li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: #eee;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+.tabs li.active,
+.tabs li:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Skill Cards Grid */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+/* Individual Skill Card */
+.skill-card {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
     
     /* Reveal Animation */
     .reveal.active { transform: translateY(0); opacity: 1; }
@@ -159,40 +259,97 @@
   <section id="skills" class="section">
     <div class="container resume-section reveal">
       <h2>Skills</h2>
-      <h3>Interests</h3>
-      <ul class="list">
-        <li>System Engineering, Dev/Ops, APIs, Identity &amp; Access Management, Automation</li>
-      </ul>
-      <h3>Networking</h3>
-      <ul class="list">
-        <li>TCP/IP, DNS, DHCP, OSI Model, Firewalls, IP Filtering (NSGs), Virtualization</li>
-      </ul>
-      <h3>Technologies</h3>
-      <ul class="list">
-        <li>Windows, Azure Cloud, Microsoft 365, AWS, Intune, GitHub, Generative AI</li>
-      </ul>
-      <h3>Operating Systems</h3>
-      <ul class="list">
-        <li>Windows, MacOS, Android, iOS, Linux</li>
-      </ul>
-      <h3>Hardware Skills</h3>
-      <ul class="list">
-        <li>Mobile Device Repairs, PC Hardware Assembly, Hardware Diagnosis</li>
-      </ul>
-      <h3>CRM &amp; Ticketing Systems</h3>
-      <ul class="list">
-        <li>Salesforce, Zendesk, ServiceNow</li>
-      </ul>
-      <h3>Communication Tools</h3>
-      <ul class="list">
-        <li>Slack, Outlook, Microsoft Teams, Cisco Jabber</li>
-      </ul>
-      <h3>Soft Skills</h3>
-      <ul class="list">
-        <li>Active Listening, Empathy, Clear Communication, Adaptability, Conflict Resolution, Reliability, Resilience, Resourcefulness</li>
-      </ul>
+      <div class="skills-tabs">
+        <!-- Tabs -->
+        <ul class="tabs">
+          <li class="tab active" data-tab="interests">Interests</li>
+          <li class="tab" data-tab="networking">Networking</li>
+          <li class="tab" data-tab="technologies">Technologies</li>
+          <li class="tab" data-tab="os">Operating Systems</li>
+          <li class="tab" data-tab="hardware">Hardware Skills</li>
+          <li class="tab" data-tab="crm">CRM &amp; Ticketing</li>
+          <li class="tab" data-tab="communication">Communication</li>
+          <li class="tab" data-tab="soft">Soft Skills</li>
+        </ul>
+        <!-- Tab Contents -->
+        <div id="interests" class="tab-content active">
+          <div class="skill-grid">
+            <div class="skill-card">System Engineering</div>
+            <div class="skill-card">Dev/Ops</div>
+            <div class="skill-card">APIs</div>
+            <div class="skill-card">Identity &amp; Access Management</div>
+            <div class="skill-card">Automation</div>
+          </div>
+        </div>
+        <div id="networking" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">TCP/IP</div>
+            <div class="skill-card">DNS</div>
+            <div class="skill-card">DHCP</div>
+            <div class="skill-card">OSI Model</div>
+            <div class="skill-card">Firewalls</div>
+            <div class="skill-card">IP Filtering (NSGs)</div>
+            <div class="skill-card">Virtualization</div>
+          </div>
+        </div>
+        <div id="technologies" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">Windows</div>
+            <div class="skill-card">Azure Cloud</div>
+            <div class="skill-card">Microsoft 365</div>
+            <div class="skill-card">AWS</div>
+            <div class="skill-card">Intune</div>
+            <div class="skill-card">GitHub</div>
+            <div class="skill-card">Generative AI</div>
+          </div>
+        </div>
+        <div id="os" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">Windows</div>
+            <div class="skill-card">MacOS</div>
+            <div class="skill-card">Android</div>
+            <div class="skill-card">iOS</div>
+            <div class="skill-card">Linux</div>
+          </div>
+        </div>
+        <div id="hardware" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">Mobile Device Repairs</div>
+            <div class="skill-card">PC Hardware Assembly</div>
+            <div class="skill-card">Hardware Diagnosis</div>
+          </div>
+        </div>
+        <div id="crm" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">Salesforce</div>
+            <div class="skill-card">Zendesk</div>
+            <div class="skill-card">ServiceNow</div>
+          </div>
+        </div>
+        <div id="communication" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">Slack</div>
+            <div class="skill-card">Outlook</div>
+            <div class="skill-card">Microsoft Teams</div>
+            <div class="skill-card">Cisco Jabber</div>
+          </div>
+        </div>
+        <div id="soft" class="tab-content">
+          <div class="skill-grid">
+            <div class="skill-card">Active Listening</div>
+            <div class="skill-card">Empathy</div>
+            <div class="skill-card">Clear Communication</div>
+            <div class="skill-card">Adaptability</div>
+            <div class="skill-card">Conflict Resolution</div>
+            <div class="skill-card">Reliability</div>
+            <div class="skill-card">Resilience</div>
+            <div class="skill-card">Resourcefulness</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+  
   
   <!-- Work Experience -->
   <section id="experience" class="section">
@@ -279,8 +436,36 @@
       <p><strong>SAE Institute of Technology</strong> — Diploma in Audio Engineering (2012-2013)</p>
     </div>
   </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <p class="footer-text">Let's Connect! &copy; 2025 J. Sebastian Mateus</p>
+      </div>
+    </div>
+  </footer>
+  
   
   <script>
+    // Switch tabs on click
+  document.querySelectorAll('.tabs li').forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs and contents
+      document.querySelectorAll('.tabs li').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      // Add active class to clicked tab and corresponding content
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+    });
+  });
     // Reveal on Scroll
     const reveals = document.querySelectorAll('.reveal');
     function revealOnScroll() {

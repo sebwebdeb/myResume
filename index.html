@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --primary: #442852;
@@ -98,51 +97,37 @@
       font-size: 1rem; 
       animation: fadeInUp 1s ease forwards; 
     }
-/* Modal overlay */
-.modal {
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Slower transition */
-  transform: translateY(-20px);
-}
-
-/* Active state for modal (visible) */
-.modal.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* Modal content styling (Material Design feel) */
-.modal-content {
-  background: var(--white);
-  margin: 10% auto;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 1250px; /* 2.5x larger than the original 500px */
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
-}
-.modal-content form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  min-height: 200px; /* Increase this value as needed */
-}
-
-
+    
+    /* Modal overlay */
+    .modal {
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(-20px);
+    }
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .modal-content {
+      background: var(--white);
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 1250px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
+    }
     .modal-content h2 {
       margin-bottom: 1rem;
     }
-    /* Form Elements */
     .modal-content form label {
       display: block;
       margin-top: 1rem;
@@ -154,6 +139,9 @@
       margin-top: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 4px;
+    }
+    .modal-content form textarea {
+      min-height: 200px;
     }
     .modal-content form button {
       margin-top: 1rem;
@@ -169,7 +157,7 @@
       background: var(--dark);
     }
     
-    /* Section Headings with Clear Hierarchy */
+    /* Section Headings */
     .section h2 {
       text-align: center;
       margin-bottom: 5rem;
@@ -203,7 +191,7 @@
       font-weight: bold;
     }
     
-    /* Timeline / Work Experience with Material Shadow */
+    /* Work Experience */
     .experience-item {
       background: var(--white);
       border-left: 3px solid var(--primary);
@@ -220,14 +208,13 @@
       box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
     }
     
-    /* Portfolio Grid */
+    /* Portfolio */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
-    /* Portfolio Cards */
     .portfolio-card {
       background: var(--white);
       border-radius: 8px;
@@ -252,7 +239,6 @@
       margin: 0.5rem 0 1rem;
       font-size: 1rem;
     }
-    /* Project Link Button */
     .project-link {
       display: inline-block;
       padding: 0.5rem 1rem;
@@ -266,7 +252,7 @@
       background: var(--dark);
     }
     
-    /* Footer Styles */
+    /* Footer */
     .footer {
       background: var(--dark);
       color: var(--white);
@@ -300,46 +286,69 @@
       margin: 0;
     }
     
-    /* Filter Buttons */
-    .filter-buttons {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .filter-btn {
-      background: #eee;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0 0.3rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--primary);
-      color: var(--white);
-      transform: scale(1.05);
-    }
-    
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    /* Skill Cards */
-    .skill-card {
+    /* Tabs for Skills Section styled as folder tabs */
+    .tabs {
+      border: 1px solid #ddd;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      overflow: hidden;
       background: var(--white);
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
       box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
     }
-    .skill-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
+    .tab-buttons {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .tab-buttons li {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+      background: #f9f9f9; /* Unselected tab base color */
+      border: 1px solid #ddd;
+      border-bottom: none; /* Remove bottom border */
+      margin-right: -1px;  /* Overlap borders */
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .tab-buttons li:last-child {
+      margin-right: 0;
+    }
+    .tab-buttons li:first-child {
+      border-top-left-radius: 4px;
+    }
+    .tab-buttons li:last-child {
+      border-top-right-radius: 4px;
+    }
+    .tab-buttons li.active {
+      background: var(--white); /* Active tab matches content background */
+      border-color: var(--primary); /* Highlight active border */
+      font-weight: 600;
+      color: var(--primary);
+      border-bottom: 1px solid var(--white); /* Makes it flush with the content */
+    }
+    .tab-content {
+      border: 1px solid #ddd;
+      border-top: none;
+      padding: 1rem;
+      background: var(--white);
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    .tab-panel ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .tab-panel ul li::before {
+      content: "• ";
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 0.5rem;
     }
     
     /* Reveal Animation */
@@ -347,8 +356,6 @@
       transform: translateY(0); 
       opacity: 1; 
     }
-    
-    /* Keyframe Animations */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -357,8 +364,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
-    /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .hero p, .contact-details { font-size: 1rem; }
@@ -425,82 +430,98 @@
     </div>
   </section>
   
-  <!-- Skills -->
+  <!-- Skills Tab Section (Folder-Style Tabs) -->
   <section id="skills" class="section">
     <div class="container resume-section reveal">
       <h2>Skills & Knowledge</h2>
-      <!-- Filter Buttons -->
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="interests">Interests</button>
-        <button class="filter-btn" data-filter="networking">Networking</button>
-        <button class="filter-btn" data-filter="technologies">Technologies</button>
-        <button class="filter-btn" data-filter="os">Operating Systems</button>
-        <button class="filter-btn" data-filter="hardware">Hardware</button>
-        <button class="filter-btn" data-filter="crm">CRM & Ticketing</button>
-        <button class="filter-btn" data-filter="communication">Communication</button>
-        <button class="filter-btn" data-filter="soft">Soft Skills</button>
-      </div>
-      <!-- Skills Grid -->
-      <div class="skills-grid">
-        <!-- Interests -->
-        <div class="skill-card" data-category="interests">System Engineering</div>
-        <div class="skill-card" data-category="interests">Dev/Ops</div>
-        <div class="skill-card" data-category="interests">APIs</div>
-        <div class="skill-card" data-category="interests">Identity &amp; Access Management</div>
-        <div class="skill-card" data-category="interests">Automation</div>
-        <div class="skill-card" data-category="interests">Large Language Models</div>
-        
-        <!-- Networking -->
-        <div class="skill-card" data-category="networking">TCP/IP</div>
-        <div class="skill-card" data-category="networking">DNS</div>
-        <div class="skill-card" data-category="networking">DHCP</div>
-        <div class="skill-card" data-category="networking">OSI Model</div>
-        <div class="skill-card" data-category="networking">Firewalls</div>
-        <div class="skill-card" data-category="networking">IP Filtering (NSGs)</div>
-        <div class="skill-card" data-category="networking">Virtualization</div>
-        
-        <!-- Technologies -->
-        <div class="skill-card" data-category="technologies">Windows</div>
-        <div class="skill-card" data-category="technologies">Azure Cloud</div>
-        <div class="skill-card" data-category="technologies">Microsoft 365</div>
-        <div class="skill-card" data-category="technologies">AWS</div>
-        <div class="skill-card" data-category="technologies">Intune</div>
-        <div class="skill-card" data-category="technologies">GitHub</div>
-        <div class="skill-card" data-category="technologies">Generative AI</div>
-        
-        <!-- Operating Systems -->
-        <div class="skill-card" data-category="os">Windows</div>
-        <div class="skill-card" data-category="os">MacOS</div>
-        <div class="skill-card" data-category="os">Android</div>
-        <div class="skill-card" data-category="os">iOS</div>
-        <div class="skill-card" data-category="os">Linux</div>
-        
-        <!-- Hardware -->
-        <div class="skill-card" data-category="hardware">Mobile Device Repairs</div>
-        <div class="skill-card" data-category="hardware">PC Hardware Assembly</div>
-        <div class="skill-card" data-category="hardware">Hardware Diagnosis</div>
-        
-        <!-- CRM & Ticketing -->
-        <div class="skill-card" data-category="crm">Salesforce</div>
-        <div class="skill-card" data-category="crm">Zendesk</div>
-        <div class="skill-card" data-category="crm">ServiceNow</div>
-        
-        <!-- Communication -->
-        <div class="skill-card" data-category="communication">Slack</div>
-        <div class="skill-card" data-category="communication">Outlook</div>
-        <div class="skill-card" data-category="communication">Microsoft Teams</div>
-        <div class="skill-card" data-category="communication">Cisco Jabber</div>
-        
-        <!-- Soft Skills -->
-        <div class="skill-card" data-category="soft">Active Listening</div>
-        <div class="skill-card" data-category="soft">Empathy</div>
-        <div class="skill-card" data-category="soft">Clear Communication</div>
-        <div class="skill-card" data-category="soft">Adaptability</div>
-        <div class="skill-card" data-category="soft">Conflict Resolution</div>
-        <div class="skill-card" data-category="soft">Reliability</div>
-        <div class="skill-card" data-category="soft">Resilience</div>
-        <div class="skill-card" data-category="soft">Resourcefulness</div>
+      <div class="tabs">
+        <ul class="tab-buttons">
+          <li class="tab-btn active" data-tab="interests">Interests</li>
+          <li class="tab-btn" data-tab="networking">Networking</li>
+          <li class="tab-btn" data-tab="technologies">Technologies</li>
+          <li class="tab-btn" data-tab="os">Operating Systems</li>
+          <li class="tab-btn" data-tab="hardware">Hardware</li>
+          <li class="tab-btn" data-tab="crm">CRM & Ticketing</li>
+          <li class="tab-btn" data-tab="communication">Communication</li>
+          <li class="tab-btn" data-tab="soft">Soft Skills</li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-panel active" id="interests">
+            <ul>
+              <li>System Engineering</li>
+              <li>Dev/Ops</li>
+              <li>APIs</li>
+              <li>Identity &amp; Access Management</li>
+              <li>Automation</li>
+              <li>Large Language Models</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="networking">
+            <ul>
+              <li>TCP/IP</li>
+              <li>DNS</li>
+              <li>DHCP</li>
+              <li>OSI Model</li>
+              <li>Firewalls</li>
+              <li>IP Filtering (NSGs)</li>
+              <li>Virtualization</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="technologies">
+            <ul>
+              <li>Windows</li>
+              <li>Azure Cloud</li>
+              <li>Microsoft 365</li>
+              <li>AWS</li>
+              <li>Intune</li>
+              <li>GitHub</li>
+              <li>Generative AI</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="os">
+            <ul>
+              <li>Windows</li>
+              <li>MacOS</li>
+              <li>Android</li>
+              <li>iOS</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="hardware">
+            <ul>
+              <li>Mobile Device Repairs</li>
+              <li>PC Hardware Assembly</li>
+              <li>Hardware Diagnosis</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="crm">
+            <ul>
+              <li>Salesforce</li>
+              <li>Zendesk</li>
+              <li>ServiceNow</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="communication">
+            <ul>
+              <li>Slack</li>
+              <li>Outlook</li>
+              <li>Microsoft Teams</li>
+              <li>Cisco Jabber</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="soft">
+            <ul>
+              <li>Active Listening</li>
+              <li>Empathy</li>
+              <li>Clear Communication</li>
+              <li>Adaptability</li>
+              <li>Conflict Resolution</li>
+              <li>Reliability</li>
+              <li>Resilience</li>
+              <li>Resourcefulness</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -509,7 +530,6 @@
   <section id="experience" class="section">
     <div class="container">
       <h2 class="reveal">Work Experience</h2>
-      
       <div class="experience-item reveal">
         <h3>Desktop Configuration Analyst II</h3>
         <p><strong>Tekstream Solutions, Atlanta, GA</strong> — November 2024 - Present</p>
@@ -524,7 +544,6 @@
           <li>Collaborated on cross-functional projects to enhance hybrid cloud infrastructure.</li>
         </ul>
       </div>
-      
       <div class="experience-item reveal">
         <h3>Bilingual Technical Support Specialist</h3>
         <p><strong>CDE Inc., Marietta, GA</strong> — July 2024 - November 2024</p>
@@ -536,7 +555,6 @@
           <li>Processed equipment orders as needed.</li>
         </ul>
       </div>
-      
       <div class="experience-item reveal">
         <h3>Bilingual Technical Support Analyst</h3>
         <p><strong>Assurant, Atlanta, GA</strong> — June 2022 - July 2024</p>
@@ -547,7 +565,6 @@
           <li>Utilized remote access tools for efficient support.</li>
         </ul>
       </div>
-      
       <div class="experience-item reveal">
         <h3>Bilingual Medical Collections &amp; Billing Agent</h3>
         <p><strong>Hollis Cobb Associates, Atlanta, GA</strong> — April 2021 - June 2022</p>
@@ -558,7 +575,6 @@
           <li>Coordinated with the AR department for insurance claim submissions.</li>
         </ul>
       </div>
-      
       <div class="experience-item reveal">
         <h3>Field Repair Technician for Device Insurance Claims</h3>
         <p><strong>Asurion, Atlanta, GA</strong> — October 2019 - April 2021</p>
@@ -569,7 +585,6 @@
           <li>Mentored new hires to improve team competency.</li>
         </ul>
       </div>
-      
       <div class="experience-item reveal">
         <h3>Mobile Device and Computer Technician</h3>
         <p><strong>uBreakiFix, Duluth, GA</strong> — July 2019 - October 2019</p>
@@ -588,21 +603,18 @@
     <div class="container resume-section reveal">
       <h2>Portfolio</h2>
       <div class="portfolio-grid">
-        <!-- Portfolio Card 1 -->
         <div class="portfolio-card">
           <img src="https://via.placeholder.com/300x200" alt="Project 1">
           <h3>Project Title 1</h3>
           <p>Short description for project 1.</p>
           <a href="#" class="project-link">View Project</a>
         </div>
-        <!-- Portfolio Card 2 -->
         <div class="portfolio-card">
           <img src="https://via.placeholder.com/300x200" alt="Project 2">
           <h3>Project Title 2</h3>
           <p>Short description for project 2.</p>
           <a href="#" class="project-link">View Project</a>
         </div>
-        <!-- Portfolio Card 3 -->
         <div class="portfolio-card">
           <img src="https://via.placeholder.com/300x200" alt="Project 3">
           <h3>Project Title 3</h3>
@@ -661,45 +673,35 @@
       });
     });
   
-    // Filter skills based on selected category
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const skillCards = document.querySelectorAll('.skill-card');
-  
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Update active button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-  
-        const filter = button.getAttribute('data-filter');
-  
-        // Show/hide skill cards based on the filter
-        skillCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  
     // Contact Modal functionality with smooth transitions
     const contactBtn = document.getElementById('contactBtn');
     const contactModal = document.getElementById('contactModal');
   
-    // Show the modal when "Contact Me" is clicked
     contactBtn.addEventListener('click', function(e) {
       e.preventDefault();
       contactModal.classList.add('active');
     });
   
-    // Hide the modal when clicking outside of the modal-content
     window.addEventListener('click', function(e) {
       if (e.target == contactModal) {
         contactModal.classList.remove('active');
       }
+    });
+  
+    // Tab functionality for Skills Section
+    document.querySelectorAll('.tab-buttons li').forEach(tabBtn => {
+      tabBtn.addEventListener('click', function() {
+        // Remove active class from all tab buttons
+        document.querySelectorAll('.tab-buttons li').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+  
+        // Hide all tab panels
+        document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+  
+        // Show the panel that matches the data-tab attribute
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
     });
   </script>
 </body>

@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #657496;
+      --primary: #442852;
       --dark: #2c3e50;
       --light: #f4f6f8;
       --white: #fff;
@@ -24,30 +26,28 @@
       box-sizing: border-box;
     }
     body {
-  font-family: 'Poppins', sans-serif;
-  
-  color: var(--dark);
-  background: var(--light);
-}
-h1, h2, h3, .resume-section h3 {
-  font-family: 'Open sans', serif;
-  font-weight: 700;
-  
-}
-h3 {
-  color: #1b8cc0; /* Deep Navy Blue */
-}
-
-
-
-    a { text-decoration: none; color: inherit; }
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      background: var(--light);
+    }
+    h1, h2, h3, .resume-section h3 {
+      font-family: 'Arsenal SC', serif;
+      font-weight: 700;
+    }
+    h3 {
+      color: #4659ac; 
+    }
+    a { 
+      text-decoration: none; 
+      color: inherit; 
+    }
     
-    /* Sticky Navigation */
+    /* Sticky Navigation (Material Elevated App Bar) */
     header nav {
       position: sticky;
       top: 0;
       background: var(--white);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12), 0px 2px 3px rgba(0,0,0,0.24);
       z-index: 10;
     }
     nav ul {
@@ -56,16 +56,26 @@ h3 {
       list-style: none;
       padding: 1rem;
     }
-    nav li { margin: 0 1rem; }
+    nav li { 
+      margin: 0 1rem; 
+    }
     nav a {
       font-weight: 600;
       transition: color 0.3s ease;
     }
-    nav a:hover { color: var(--primary); }
+    nav a:hover { 
+      color: var(--primary); 
+    }
     
     /* Container & Sections */
-    .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
-    .section { padding: 1.5rem 0; }
+    .container { 
+      max-width: 1200px; 
+      margin: auto; 
+      padding: 0 2rem; 
+    }
+    .section { 
+      padding: 1.5rem 0; 
+    }
     
     /* Header / Hero Section */
     .hero {
@@ -74,45 +84,140 @@ h3 {
       text-align: center;
       padding: 6rem 0 4rem;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; animation: fadeInDown 1s ease forwards; }
-    .hero p { font-size: 1.2rem; margin-bottom: 1rem; animation: fadeInUp 1s ease forwards; }
-    .contact-details { font-size: 1rem; animation: fadeInUp 1s ease forwards; }
+    .hero h1 { 
+      font-size: 3rem; 
+      margin-bottom: 0.5rem; 
+      animation: fadeInDown 1s ease forwards; 
+    }
+    .hero p { 
+      font-size: 1.2rem; 
+      margin-bottom: 1rem; 
+      animation: fadeInUp 1s ease forwards; 
+    }
+    .contact-details { 
+      font-size: 1rem; 
+      animation: fadeInUp 1s ease forwards; 
+    }
     
-    /* Section Headings */
+    /* Section Headings with Clear Hierarchy */
     .section h2 {
       text-align: center;
       margin-bottom: 5rem;
       font-weight: 600;
       color: var(--primary);
       font-size: 50px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
     
     /* Resume Content */
     .resume-section {
       margin-bottom: 3rem;
     }
-    .resume-section h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .resume-section h3 { 
+      color: var(--primary); 
+      margin-bottom: 0.5rem; 
+    }
     .resume-section p, 
-    .resume-section li { margin-bottom: 0.5rem; }
-    .list { list-style: none; padding-left: 1rem; }
+    .resume-section li { 
+      margin-bottom: 0.5rem; 
+    }
+    .list { 
+      list-style: none; 
+      padding-left: 1rem; 
+    }
     .list li::before {
       content: "• ";
       color: var(--primary);
       font-weight: bold;
     }
     
-    /* Timeline / Work Experience */
+    /* Timeline / Work Experience with Material Shadow */
     .experience-item {
       background: var(--white);
       border-left: 3px solid var(--primary);
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
       transform: translateY(20px);
       opacity: 0;
       transition: transform 0.4s ease, opacity 0.4s ease;
     }
+    .experience-item:hover {
+      transform: translateY(0);
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
+    }
+    
+    /* Portfolio Placeholder Card */
+    .portfolio-card {
+      background: var(--white);
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
+    }
+
+    /* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
+}
+
+.portfolio-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.portfolio-card h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.portfolio-card p {
+  margin: 0.5rem 0 1rem;
+  font-size: 1rem;
+}
+
+/* Project Link Button */
+.project-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.project-link:hover {
+  background: var(--dark);
+}
+
     
     /* Footer Styles */
     .footer {
@@ -182,17 +287,20 @@ h3 {
       padding: 1rem;
       border-radius: 8px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
     .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
     }
     
     /* Reveal Animation */
-    .reveal.active { transform: translateY(0); opacity: 1; }
+    .reveal.active { 
+      transform: translateY(0); 
+      opacity: 1; 
+    }
     
     /* Keyframe Animations */
     @keyframes fadeInDown {
@@ -220,6 +328,7 @@ h3 {
         <li><a href="#summary">Summary</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#education">Education</a></li>
       </ul>
     </nav>
@@ -250,7 +359,6 @@ h3 {
     </div>
   </section>
   
-  
   <!-- Skills -->
   <section id="skills" class="section">
     <div class="container resume-section reveal">
@@ -275,6 +383,7 @@ h3 {
         <div class="skill-card" data-category="interests">APIs</div>
         <div class="skill-card" data-category="interests">Identity &amp; Access Management</div>
         <div class="skill-card" data-category="interests">Automation</div>
+        <div class="skill-card" data-category="interests">Large Language Models</div>
         
         <!-- Networking -->
         <div class="skill-card" data-category="networking">TCP/IP</div>
@@ -329,6 +438,8 @@ h3 {
       </div>
     </div>
   </section>
+  
+  
   
   <!-- Work Experience -->
   <section id="experience" class="section">
@@ -407,6 +518,37 @@ h3 {
       </div>
     </div>
   </section>
+
+  <!-- Portfolio Placeholder Section -->
+<section id="portfolio" class="section">
+    <div class="container resume-section reveal">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <!-- Portfolio Card 1 -->
+        <div class="portfolio-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 1">
+          <h3>Project Title 1</h3>
+          <p>Short description for project 1.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <!-- Portfolio Card 2 -->
+        <div class="portfolio-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 2">
+          <h3>Project Title 2</h3>
+          <p>Short description for project 2.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <!-- Portfolio Card 3 -->
+        <div class="portfolio-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 3">
+          <h3>Project Title 3</h3>
+          <p>Short description for project 3.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   
   <!-- Education -->
   <section id="education" class="section">

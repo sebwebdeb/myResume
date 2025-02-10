@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>J. Sebastian Mateus | IT/Cloud Technologies Professional</title>
+  
+  <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  
   <style>
     :root {
       --primary: #442852;
@@ -18,6 +18,7 @@
       --light: #f4f6f8;
       --white: #fff;
     }
+
     /* Reset & Base */
     * {
       margin: 0;
@@ -36,12 +37,12 @@
     h3 {
       color: #4659ac; 
     }
-    a { 
+    a {
       text-decoration: none; 
       color: inherit; 
     }
     
-    /* Sticky Navigation (Material Elevated App Bar) */
+    /* Sticky Navigation */
     header nav {
       position: sticky;
       top: 0;
@@ -76,26 +77,26 @@
       padding: 1.5rem 0; 
     }
     
-    /* Header / Hero Section */
+    /* Hero Section */
     .hero {
       background: linear-gradient(135deg, var(--dark), var(--primary));
       color: var(--white);
       text-align: center;
       padding: 6rem 0 4rem;
     }
-    .hero h1 { 
-      font-size: 3rem; 
-      margin-bottom: 0.5rem; 
-      animation: fadeInDown 1s ease forwards; 
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s ease forwards;
     }
-    .hero p { 
-      font-size: 1.2rem; 
-      margin-bottom: 1rem; 
-      animation: fadeInUp 1s ease forwards; 
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease forwards;
     }
-    .contact-details { 
-      font-size: 1rem; 
-      animation: fadeInUp 1s ease forwards; 
+    .contact-details {
+      font-size: 1rem;
+      animation: fadeInUp 1s ease forwards;
     }
     
     /* Modal overlay */
@@ -177,13 +178,12 @@
       color: var(--primary); 
       margin-bottom: 0.5rem; 
     }
-    .resume-section p, 
-    .resume-section li { 
+    .resume-section p, .resume-section li { 
       margin-bottom: 0.5rem; 
     }
-    .list { 
-      list-style: none; 
-      padding-left: 1rem; 
+    .list {
+      list-style: none;
+      padding-left: 1rem;
     }
     .list li::before {
       content: "• ";
@@ -285,76 +285,77 @@
       font-size: 0.9rem;
       margin: 0;
     }
-    
-    /* Tabs for Skills Section styled as folder tabs */
+
+    /* ---- New Tab Styles (from your first snippet) ---- */
+    .tabs-container {
+      margin: 20px;
+      font-family: 'Poppins', sans-serif; /* Or use Roboto if you prefer */
+    }
     .tabs {
-      border: 1px solid #ddd;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      overflow: hidden;
-      background: var(--white);
-      box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
-    }
-    .tab-buttons {
       display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      gap: 4px;
+      padding: 0 8px;
     }
-    .tab-buttons li {
-      flex: 1;
-      text-align: center;
-      padding: 1rem;
+    .tab {
+      padding: 12px 24px;
+      border: none;
+      background: #e0e0e0;
+      color: #616161;
       cursor: pointer;
-      background: #f9f9f9; /* Unselected tab base color */
-      border: 1px solid #ddd;
-      border-bottom: none; /* Remove bottom border */
-      margin-right: -1px;  /* Overlap borders */
-      transition: background 0.3s ease, border-color 0.3s ease;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(2px);
     }
-    .tab-buttons li:last-child {
-      margin-right: 0;
+    .tab:hover {
+      background: #d0d0d0;
     }
-    .tab-buttons li:first-child {
-      border-top-left-radius: 4px;
-    }
-    .tab-buttons li:last-child {
-      border-top-right-radius: 4px;
-    }
-    .tab-buttons li.active {
-      background: var(--white); /* Active tab matches content background */
-      border-color: var(--primary); /* Highlight active border */
-      font-weight: 600;
-      color: var(--primary);
-      border-bottom: 1px solid var(--white); /* Makes it flush with the content */
+    .tab.active {
+      background: #fff;
+      color: #2196F3; /* Primary color for active tab text */
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+      z-index: 2;
+      transform: translateY(0);
     }
     .tab-content {
-      border: 1px solid #ddd;
-      border-top: none;
-      padding: 1rem;
-      background: var(--white);
-    }
-    .tab-panel {
       display: none;
+      padding: 20px;
+      background: #fff;
+      border-radius: 0 8px 8px 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-height: 200px;
     }
-    .tab-panel.active {
+    .tab-content.active {
       display: block;
     }
-    .tab-panel ul {
-      list-style: none;
-      padding-left: 1rem;
+    .tab-content ul {
+      margin: 0;              /* reset default margin */
+      padding: 0 1.5rem;      /* add horizontal padding inside the box */
     }
-    .tab-panel ul li::before {
-      content: "• ";
-      color: var(--primary);
-      font-weight: bold;
-      margin-right: 0.5rem;
+
+    .tab-content ul li {
+      margin-bottom: 0.5rem;  /* space between each bullet point */
     }
-    
+    /* Ink effect for click */
+    .tab::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.3);
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: inherit;
+    }
+    .tab:active::after {
+      opacity: 1;
+    }
+
     /* Reveal Animation */
-    .reveal.active { 
-      transform: translateY(0); 
-      opacity: 1; 
+    .reveal.active {
+      transform: translateY(0);
+      opacity: 1;
     }
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
@@ -364,14 +365,19 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .hero p, .contact-details { font-size: 1rem; }
+      .tab {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation (with Contact Me link) -->
+  <!-- Navigation -->
   <header>
     <nav class="container">
       <ul>
@@ -385,7 +391,7 @@
       </ul>
     </nav>
   </header>
-  
+
   <!-- Contact Modal -->
   <div id="contactModal" class="modal">
     <div class="modal-content">
@@ -404,7 +410,7 @@
       </form>
     </div>
   </div>
-  
+
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="container">
@@ -412,11 +418,11 @@
       <p class="reveal">IT/Cloud Technologies Professional</p>
       <div class="contact-details reveal">
         <p>Atlanta, GA 30339</p>
-        <p><i class="fas fa-envelope"></i> contact@sebastianmateus.com &nbsp;&nbsp; <i class="fas fa-phone"></i> +1 470 800 1046</p>
+        <p><i class="fas fa-envelope"></i> contact@sebastianmateus.com    <i class="fas fa-phone"></i> +1 470 800 1046</p>
       </div>
     </div>
   </section>
-  
+
   <!-- Professional Summary -->
   <section id="summary" class="section">
     <div class="container resume-section reveal">
@@ -429,107 +435,117 @@
       </p>
     </div>
   </section>
-  
-  <!-- Skills Tab Section (Folder-Style Tabs) -->
+
+  <!-- Skills & Knowledge (New Tab Implementation) -->
   <section id="skills" class="section">
     <div class="container resume-section reveal">
       <h2>Skills & Knowledge</h2>
-      <div class="tabs">
-        <ul class="tab-buttons">
-          <li class="tab-btn active" data-tab="interests">Interests</li>
-          <li class="tab-btn" data-tab="networking">Networking</li>
-          <li class="tab-btn" data-tab="technologies">Technologies</li>
-          <li class="tab-btn" data-tab="os">Operating Systems</li>
-          <li class="tab-btn" data-tab="hardware">Hardware</li>
-          <li class="tab-btn" data-tab="crm">CRM & Ticketing</li>
-          <li class="tab-btn" data-tab="communication">Communication</li>
-          <li class="tab-btn" data-tab="soft">Soft Skills</li>
-        </ul>
-        <div class="tab-content">
-          <div class="tab-panel active" id="interests">
-            <ul>
-              <li>System Engineering</li>
-              <li>Dev/Ops</li>
-              <li>APIs</li>
-              <li>Identity &amp; Access Management</li>
-              <li>Automation</li>
-              <li>Large Language Models</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="networking">
-            <ul>
-              <li>TCP/IP</li>
-              <li>DNS</li>
-              <li>DHCP</li>
-              <li>OSI Model</li>
-              <li>Firewalls</li>
-              <li>IP Filtering (NSGs)</li>
-              <li>Virtualization</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="technologies">
-            <ul>
-              <li>Windows</li>
-              <li>Azure Cloud</li>
-              <li>Microsoft 365</li>
-              <li>AWS</li>
-              <li>Intune</li>
-              <li>GitHub</li>
-              <li>Generative AI</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="os">
-            <ul>
-              <li>Windows</li>
-              <li>MacOS</li>
-              <li>Android</li>
-              <li>iOS</li>
-              <li>Linux</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="hardware">
-            <ul>
-              <li>Mobile Device Repairs</li>
-              <li>PC Hardware Assembly</li>
-              <li>Hardware Diagnosis</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="crm">
-            <ul>
-              <li>Salesforce</li>
-              <li>Zendesk</li>
-              <li>ServiceNow</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="communication">
-            <ul>
-              <li>Slack</li>
-              <li>Outlook</li>
-              <li>Microsoft Teams</li>
-              <li>Cisco Jabber</li>
-            </ul>
-          </div>
-          <div class="tab-panel" id="soft">
-            <ul>
-              <li>Active Listening</li>
-              <li>Empathy</li>
-              <li>Clear Communication</li>
-              <li>Adaptability</li>
-              <li>Conflict Resolution</li>
-              <li>Reliability</li>
-              <li>Resilience</li>
-              <li>Resourcefulness</li>
-            </ul>
-          </div>
+      
+      <!-- Material-Style Tabs -->
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab active" onclick="openTab(event, 'interests')">Interests</button>
+          <button class="tab" onclick="openTab(event, 'networking')">Networking</button>
+          <button class="tab" onclick="openTab(event, 'technologies')">Technologies</button>
+          <button class="tab" onclick="openTab(event, 'os')">Operating Systems</button>
+          <button class="tab" onclick="openTab(event, 'hardware')">Hardware</button>
+          <button class="tab" onclick="openTab(event, 'crm')">CRM & Ticketing</button>
+          <button class="tab" onclick="openTab(event, 'communication')">Communication</button>
+          <button class="tab" onclick="openTab(event, 'soft')">Soft Skills</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="interests" class="tab-content active">
+          <ul>
+            <li>System Engineering</li>
+            <li>Dev/Ops</li>
+            <li>APIs</li>
+            <li>Identity & Access Management</li>
+            <li>Automation</li>
+            <li>Large Language Models</li>
+          </ul>
+        </div>
+        
+        <div id="networking" class="tab-content">
+          <ul>
+            <li>TCP/IP</li>
+            <li>DNS</li>
+            <li>DHCP</li>
+            <li>OSI Model</li>
+            <li>Firewalls</li>
+            <li>IP Filtering (NSGs)</li>
+            <li>Virtualization</li>
+          </ul>
+        </div>
+        
+        <div id="technologies" class="tab-content">
+          <ul>
+            <li>Windows</li>
+            <li>Azure Cloud</li>
+            <li>Microsoft 365</li>
+            <li>AWS</li>
+            <li>Intune</li>
+            <li>GitHub</li>
+            <li>Generative AI</li>
+          </ul>
+        </div>
+        
+        <div id="os" class="tab-content">
+          <ul>
+            <li>Windows</li>
+            <li>MacOS</li>
+            <li>Android</li>
+            <li>iOS</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+        
+        <div id="hardware" class="tab-content">
+          <ul>
+            <li>Mobile Device Repairs</li>
+            <li>PC Hardware Assembly</li>
+            <li>Hardware Diagnosis</li>
+          </ul>
+        </div>
+        
+        <div id="crm" class="tab-content">
+          <ul>
+            <li>Salesforce</li>
+            <li>Zendesk</li>
+            <li>ServiceNow</li>
+          </ul>
+        </div>
+        
+        <div id="communication" class="tab-content">
+          <ul>
+            <li>Slack</li>
+            <li>Outlook</li>
+            <li>Microsoft Teams</li>
+            <li>Cisco Jabber</li>
+          </ul>
+        </div>
+        
+        <div id="soft" class="tab-content">
+          <ul>
+            <li>Active Listening</li>
+            <li>Empathy</li>
+            <li>Clear Communication</li>
+            <li>Adaptability</li>
+            <li>Conflict Resolution</li>
+            <li>Reliability</li>
+            <li>Resilience</li>
+            <li>Resourcefulness</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Work Experience -->
   <section id="experience" class="section">
     <div class="container">
       <h2 class="reveal">Work Experience</h2>
+
       <div class="experience-item reveal">
         <h3>Desktop Configuration Analyst II</h3>
         <p><strong>Tekstream Solutions, Atlanta, GA</strong> — November 2024 - Present</p>
@@ -544,6 +560,7 @@
           <li>Collaborated on cross-functional projects to enhance hybrid cloud infrastructure.</li>
         </ul>
       </div>
+      
       <div class="experience-item reveal">
         <h3>Bilingual Technical Support Specialist</h3>
         <p><strong>CDE Inc., Marietta, GA</strong> — July 2024 - November 2024</p>
@@ -555,6 +572,7 @@
           <li>Processed equipment orders as needed.</li>
         </ul>
       </div>
+
       <div class="experience-item reveal">
         <h3>Bilingual Technical Support Analyst</h3>
         <p><strong>Assurant, Atlanta, GA</strong> — June 2022 - July 2024</p>
@@ -565,8 +583,9 @@
           <li>Utilized remote access tools for efficient support.</li>
         </ul>
       </div>
+
       <div class="experience-item reveal">
-        <h3>Bilingual Medical Collections &amp; Billing Agent</h3>
+        <h3>Bilingual Medical Collections & Billing Agent</h3>
         <p><strong>Hollis Cobb Associates, Atlanta, GA</strong> — April 2021 - June 2022</p>
         <ul class="list">
           <li>Managed accounts receivable for Northside, Well Star, and Grady hospitals.</li>
@@ -575,6 +594,7 @@
           <li>Coordinated with the AR department for insurance claim submissions.</li>
         </ul>
       </div>
+
       <div class="experience-item reveal">
         <h3>Field Repair Technician for Device Insurance Claims</h3>
         <p><strong>Asurion, Atlanta, GA</strong> — October 2019 - April 2021</p>
@@ -585,6 +605,7 @@
           <li>Mentored new hires to improve team competency.</li>
         </ul>
       </div>
+
       <div class="experience-item reveal">
         <h3>Mobile Device and Computer Technician</h3>
         <p><strong>uBreakiFix, Duluth, GA</strong> — July 2019 - October 2019</p>
@@ -597,8 +618,8 @@
       </div>
     </div>
   </section>
-  
-  <!-- Portfolio Placeholder Section -->
+
+  <!-- Portfolio -->
   <section id="portfolio" class="section">
     <div class="container resume-section reveal">
       <h2>Portfolio</h2>
@@ -624,7 +645,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Education -->
   <section id="education" class="section">
     <div class="container resume-section reveal">
@@ -632,7 +653,7 @@
       <p><strong>SAE Institute of Technology</strong> — Diploma in Audio Engineering (2012-2013)</p>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -645,11 +666,11 @@
             <i class="fab fa-github"></i>
           </a>
         </div>
-        <p class="footer-text">Let's Connect! &copy; 2025 J. Sebastian Mateus</p>
+        <p class="footer-text">Let's Connect! © 2025 J. Sebastian Mateus</p>
       </div>
     </div>
   </footer>
-  
+
   <!-- JavaScript -->
   <script>
     // Reveal on Scroll
@@ -664,45 +685,44 @@
     }
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
-  
+
     // Smooth Scroll for Navigation
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
       });
     });
-  
-    // Contact Modal functionality with smooth transitions
+
+    // Contact Modal
     const contactBtn = document.getElementById('contactBtn');
     const contactModal = document.getElementById('contactModal');
-  
     contactBtn.addEventListener('click', function(e) {
       e.preventDefault();
       contactModal.classList.add('active');
     });
-  
     window.addEventListener('click', function(e) {
       if (e.target == contactModal) {
         contactModal.classList.remove('active');
       }
     });
-  
-    // Tab functionality for Skills Section
-    document.querySelectorAll('.tab-buttons li').forEach(tabBtn => {
-      tabBtn.addEventListener('click', function() {
-        // Remove active class from all tab buttons
-        document.querySelectorAll('.tab-buttons li').forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-  
-        // Hide all tab panels
-        document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-  
-        // Show the panel that matches the data-tab attribute
-        const tabId = this.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
+
+    // New Tab Function (from your first snippet)
+    function openTab(evt, tabName) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
       });
-    });
+      // Remove active class from all tabs
+      document.querySelectorAll('.tab').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // Show selected tab content
+      document.getElementById(tabName).classList.add('active');
+      // Add active class to clicked tab
+      evt.currentTarget.classList.add('active');
+    }
   </script>
 </body>
 </html>

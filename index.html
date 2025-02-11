@@ -34,48 +34,63 @@
       font-family: 'Arsenal SC', serif;
       font-weight: 700;
     }
-    h3 {
-      color: #4659ac; 
-    }
-    a {
-      text-decoration: none; 
-      color: inherit; 
-    }
+    h3 { color: #4659ac; }
+    a { text-decoration: none; color: inherit; }
     
-    /* Sticky Navigation */
+    /* Navigation */
     header nav {
       position: sticky;
       top: 0;
       background: var(--white);
       box-shadow: 0px 2px 4px rgba(0,0,0,0.12), 0px 2px 3px rgba(0,0,0,0.24);
       z-index: 10;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    /* Hamburger Button */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      margin-right: 1rem;
     }
     nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
       padding: 1rem;
+      width: 100%;
     }
-    nav li { 
-      margin: 0 1rem; 
-    }
-    nav a {
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { 
-      color: var(--primary); 
+    nav li { margin: 0 1rem; }
+    nav a { font-weight: 600; transition: color 0.3s ease; }
+    nav a:hover { color: var(--primary); }
+
+    /* Responsive Nav (Hamburger with smooth slide) */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      nav ul {
+        flex-direction: column;
+        background: var(--white);
+        position: absolute;
+        top: 60px; /* Adjust based on nav height */
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+      }
+      nav.active ul {
+        max-height: 300px; /* Set high enough to fit menu items */
+        opacity: 1;
+      }
     }
     
     /* Container & Sections */
-    .container { 
-      max-width: 1200px; 
-      margin: auto; 
-      padding: 0 2rem; 
-    }
-    .section { 
-      padding: 1.5rem 0; 
-    }
+    .container { max-width: 1200px; margin: auto; padding: 0 2rem; }
+    .section { padding: 1.5rem 0; }
     
     /* Hero Section */
     .hero {
@@ -126,13 +141,8 @@
       max-width: 1250px;
       box-shadow: 0px 4px 6px rgba(0,0,0,0.16), 0px 4px 6px rgba(0,0,0,0.23);
     }
-    .modal-content h2 {
-      margin-bottom: 1rem;
-    }
-    .modal-content form label {
-      display: block;
-      margin-top: 1rem;
-    }
+    .modal-content h2 { margin-bottom: 1rem; }
+    .modal-content form label { display: block; margin-top: 1rem; }
     .modal-content form input,
     .modal-content form textarea {
       width: 100%;
@@ -141,9 +151,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    .modal-content form textarea {
-      min-height: 200px;
-    }
+    .modal-content form textarea { min-height: 200px; }
     .modal-content form button {
       margin-top: 1rem;
       background: var(--primary);
@@ -154,9 +162,7 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
-    .modal-content form button:hover {
-      background: var(--dark);
-    }
+    .modal-content form button:hover { background: var(--dark); }
     
     /* Section Headings */
     .section h2 {
@@ -171,20 +177,10 @@
     }
     
     /* Resume Content */
-    .resume-section {
-      margin-bottom: 3rem;
-    }
-    .resume-section h3 { 
-      color: var(--primary); 
-      margin-bottom: 0.5rem; 
-    }
-    .resume-section p, .resume-section li { 
-      margin-bottom: 0.5rem; 
-    }
-    .list {
-      list-style: none;
-      padding-left: 1rem;
-    }
+    .resume-section { margin-bottom: 3rem; }
+    .resume-section h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .resume-section p, .resume-section li { margin-bottom: 0.5rem; }
+    .list { list-style: none; padding-left: 1rem; }
     .list li::before {
       content: "• ";
       color: var(--primary);
@@ -248,9 +244,7 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-    .project-link:hover {
-      background: var(--dark);
-    }
+    .project-link:hover { background: var(--dark); }
     
     /* Footer */
     .footer {
@@ -264,13 +258,8 @@
       flex-direction: column;
       align-items: center;
     }
-    .footer-content {
-      max-width: 1200px;
-      width: 100%;
-    }
-    .social-icons {
-      margin-bottom: 1rem;
-    }
+    .footer-content { max-width: 1200px; width: 100%; }
+    .social-icons { margin-bottom: 1rem; }
     .social-icons a {
       margin: 0 0.5rem;
       font-size: 1.5rem;
@@ -281,15 +270,12 @@
       transform: scale(1.1);
       color: var(--primary);
     }
-    .footer-text {
-      font-size: 0.9rem;
-      margin: 0;
-    }
+    .footer-text { font-size: 0.9rem; margin: 0; }
 
-    /* ---- New Tab Styles (from your first snippet) ---- */
+    /* ---- Tab Styles (Larger Screens) ---- */
     .tabs-container {
       margin: 20px;
-      font-family: 'Poppins', sans-serif; /* Or use Roboto if you prefer */
+      font-family: 'Poppins', sans-serif;
     }
     .tabs {
       display: flex;
@@ -309,12 +295,10 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateY(2px);
     }
-    .tab:hover {
-      background: #d0d0d0;
-    }
+    .tab:hover { background: #d0d0d0; }
     .tab.active {
       background: #fff;
-      color: #2196F3; /* Primary color for active tab text */
+      color: #2196F3;
       box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
       z-index: 2;
       transform: translateY(0);
@@ -327,18 +311,13 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       min-height: 200px;
     }
-    .tab-content.active {
-      display: block;
-    }
+    .tab-content.active { display: block; }
     .tab-content ul {
-      margin: 0;              /* reset default margin */
-      padding: 0 1.5rem;      /* add horizontal padding inside the box */
+      margin: 0;
+      padding: 0 1.5rem;
     }
-
-    .tab-content ul li {
-      margin-bottom: 0.5rem;  /* space between each bullet point */
-    }
-    /* Ink effect for click */
+    .tab-content ul li { margin-bottom: 0.5rem; }
+    /* Ink effect for tab click */
     .tab::after {
       content: '';
       position: absolute;
@@ -348,31 +327,49 @@
       transition: opacity 0.3s;
       border-radius: inherit;
     }
-    .tab:active::after {
-      opacity: 1;
+    .tab:active::after { opacity: 1; }
+
+    /* ---- Accordion Styles (Smaller Screens) ---- */
+    .accordion { display: none; margin: 20px; }
+    .accordion-item { border-bottom: 1px solid #ccc; }
+    .accordion-header {
+      background: #e0e0e0;
+      border: none;
+      padding: 12px 24px;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+    .accordion-header:hover { background: #d0d0d0; }
+    /* Initially, the first accordion item (Interests) is open */
+    .accordion-header.active { background: #fff; color: #2196F3; }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+      padding: 0 24px;
+    }
+    .accordion-header.active + .accordion-content {
+      max-height: 500px; /* Adjust if needed */
+      padding: 12px 24px;
     }
 
     /* Reveal Animation */
-    .reveal.active {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .reveal.active { transform: translateY(0); opacity: 1; }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* Media Query for Smaller Screens */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .hero p, .contact-details { font-size: 1rem; }
-      .tab {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-      }
+      .tab { padding: 8px 16px; font-size: 0.9rem; }
+      /* Hide tab layout and show accordion */
+      .tabs-container { display: none; }
+      .accordion { display: block; }
     }
   </style>
 </head>
@@ -380,6 +377,7 @@
   <!-- Navigation -->
   <header>
     <nav class="container">
+      <button id="hamburger" class="hamburger"><i class="fas fa-bars"></i></button>
       <ul>
         <li><a href="#hero">Home</a></li>
         <li><a href="#summary">Summary</a></li>
@@ -399,13 +397,10 @@
       <form>
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Your Name">
-        
         <label for="subject">Subject</label>
         <input type="text" id="subject" placeholder="Subject">
-        
         <label for="message">Message</label>
         <textarea id="message" placeholder="Your Message"></textarea>
-        
         <button type="button">Send</button>
       </form>
     </div>
@@ -436,12 +431,12 @@
     </div>
   </section>
 
-  <!-- Skills & Knowledge (New Tab Implementation) -->
+  <!-- Skills & Knowledge Section -->
   <section id="skills" class="section">
     <div class="container resume-section reveal">
       <h2>Skills & Knowledge</h2>
       
-      <!-- Material-Style Tabs -->
+      <!-- Tabs Layout (for larger screens) -->
       <div class="tabs-container">
         <div class="tabs">
           <button class="tab active" onclick="openTab(event, 'interests')">Interests</button>
@@ -465,7 +460,6 @@
             <li>Large Language Models</li>
           </ul>
         </div>
-        
         <div id="networking" class="tab-content">
           <ul>
             <li>TCP/IP</li>
@@ -477,7 +471,6 @@
             <li>Virtualization</li>
           </ul>
         </div>
-        
         <div id="technologies" class="tab-content">
           <ul>
             <li>Windows</li>
@@ -489,7 +482,6 @@
             <li>Generative AI</li>
           </ul>
         </div>
-        
         <div id="os" class="tab-content">
           <ul>
             <li>Windows</li>
@@ -499,7 +491,6 @@
             <li>Linux</li>
           </ul>
         </div>
-        
         <div id="hardware" class="tab-content">
           <ul>
             <li>Mobile Device Repairs</li>
@@ -507,7 +498,6 @@
             <li>Hardware Diagnosis</li>
           </ul>
         </div>
-        
         <div id="crm" class="tab-content">
           <ul>
             <li>Salesforce</li>
@@ -515,7 +505,6 @@
             <li>ServiceNow</li>
           </ul>
         </div>
-        
         <div id="communication" class="tab-content">
           <ul>
             <li>Slack</li>
@@ -524,7 +513,6 @@
             <li>Cisco Jabber</li>
           </ul>
         </div>
-        
         <div id="soft" class="tab-content">
           <ul>
             <li>Active Listening</li>
@@ -538,6 +526,109 @@
           </ul>
         </div>
       </div>
+
+      <!-- Accordion Layout (for smaller screens) -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header active">Interests</button>
+          <div class="accordion-content active">
+            <ul>
+              <li>System Engineering</li>
+              <li>Dev/Ops</li>
+              <li>APIs</li>
+              <li>Identity & Access Management</li>
+              <li>Automation</li>
+              <li>Large Language Models</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Networking</button>
+          <div class="accordion-content">
+            <ul>
+              <li>TCP/IP</li>
+              <li>DNS</li>
+              <li>DHCP</li>
+              <li>OSI Model</li>
+              <li>Firewalls</li>
+              <li>IP Filtering (NSGs)</li>
+              <li>Virtualization</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Technologies</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Windows</li>
+              <li>Azure Cloud</li>
+              <li>Microsoft 365</li>
+              <li>AWS</li>
+              <li>Intune</li>
+              <li>GitHub</li>
+              <li>Generative AI</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Operating Systems</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Windows</li>
+              <li>MacOS</li>
+              <li>Android</li>
+              <li>iOS</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Hardware</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Mobile Device Repairs</li>
+              <li>PC Hardware Assembly</li>
+              <li>Hardware Diagnosis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">CRM & Ticketing</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Salesforce</li>
+              <li>Zendesk</li>
+              <li>ServiceNow</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Communication</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Slack</li>
+              <li>Outlook</li>
+              <li>Microsoft Teams</li>
+              <li>Cisco Jabber</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Soft Skills</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Active Listening</li>
+              <li>Empathy</li>
+              <li>Clear Communication</li>
+              <li>Adaptability</li>
+              <li>Conflict Resolution</li>
+              <li>Reliability</li>
+              <li>Resilience</li>
+              <li>Resourcefulness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -545,7 +636,6 @@
   <section id="experience" class="section">
     <div class="container">
       <h2 class="reveal">Work Experience</h2>
-
       <div class="experience-item reveal">
         <h3>Desktop Configuration Analyst II</h3>
         <p><strong>Tekstream Solutions, Atlanta, GA</strong> — November 2024 - Present</p>
@@ -560,7 +650,6 @@
           <li>Collaborated on cross-functional projects to enhance hybrid cloud infrastructure.</li>
         </ul>
       </div>
-      
       <div class="experience-item reveal">
         <h3>Bilingual Technical Support Specialist</h3>
         <p><strong>CDE Inc., Marietta, GA</strong> — July 2024 - November 2024</p>
@@ -572,7 +661,6 @@
           <li>Processed equipment orders as needed.</li>
         </ul>
       </div>
-
       <div class="experience-item reveal">
         <h3>Bilingual Technical Support Analyst</h3>
         <p><strong>Assurant, Atlanta, GA</strong> — June 2022 - July 2024</p>
@@ -583,7 +671,6 @@
           <li>Utilized remote access tools for efficient support.</li>
         </ul>
       </div>
-
       <div class="experience-item reveal">
         <h3>Bilingual Medical Collections & Billing Agent</h3>
         <p><strong>Hollis Cobb Associates, Atlanta, GA</strong> — April 2021 - June 2022</p>
@@ -594,7 +681,6 @@
           <li>Coordinated with the AR department for insurance claim submissions.</li>
         </ul>
       </div>
-
       <div class="experience-item reveal">
         <h3>Field Repair Technician for Device Insurance Claims</h3>
         <p><strong>Asurion, Atlanta, GA</strong> — October 2019 - April 2021</p>
@@ -605,7 +691,6 @@
           <li>Mentored new hires to improve team competency.</li>
         </ul>
       </div>
-
       <div class="experience-item reveal">
         <h3>Mobile Device and Computer Technician</h3>
         <p><strong>uBreakiFix, Duluth, GA</strong> — July 2019 - October 2019</p>
@@ -659,7 +744,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/j-sebastian-mateus" target="_blank" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
           </a>
           <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
@@ -695,7 +780,7 @@
       });
     });
 
-    // Contact Modal
+    // Contact Modal Functionality
     const contactBtn = document.getElementById('contactBtn');
     const contactModal = document.getElementById('contactModal');
     contactBtn.addEventListener('click', function(e) {
@@ -708,21 +793,31 @@
       }
     });
 
-    // New Tab Function (from your first snippet)
+    // Tab Functionality for Skills Section (Larger Screens)
     function openTab(evt, tabName) {
-      // Hide all tab contents
       document.querySelectorAll('.tab-content').forEach(content => {
         content.classList.remove('active');
       });
-      // Remove active class from all tabs
       document.querySelectorAll('.tab').forEach(btn => {
         btn.classList.remove('active');
       });
-      // Show selected tab content
       document.getElementById(tabName).classList.add('active');
-      // Add active class to clicked tab
       evt.currentTarget.classList.add('active');
     }
+
+    // Hamburger Toggle for Navigation (with smooth slide)
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
+    });
+
+    // Accordion Toggle for Skills (Mobile)
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        // Toggle active class on header and its sibling content
+        this.classList.toggle('active');
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>

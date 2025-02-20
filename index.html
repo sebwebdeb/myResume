@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>J. Sebastian Mateus | IT/Cloud Technologies Professional</title>
+  
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css">
+ 
+  
+
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="container">
+      <button id="hamburger" class="hamburger"><i class="fas fa-bars"></i></button>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#" id="contactBtn">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email" required>
+      
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="Subject">
+      
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1 class="reveal">J. Sebastian Mateus</h1>
+      <p class="reveal">IT/Cloud Technologies Professional</p>
+      <div class="contact-details reveal">
+        <p>Atlanta, GA 30339</p>
+        <p><i class="fas fa-envelope"></i> contact@sebastianmateus.com    <i class="fas fa-phone"></i> +1 470 800 1046</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Summary -->
+  <section id="summary" class="section">
+    <div class="container resume-section reveal">
+      <h2>Professional Summary</h2>
+      <p>
+        I am a seasoned IT professional with 5+ years of experience in hardware and software support, passionate about empowering enterprises through cloud and hybrid ecosystems.<br><br>
+        My professional goal is to become an expert in Microsoft Azure, focusing on endpoint management, IT infrastructure, and cloud deployment to help businesses optimize and modernize their technology environments.<br><br>
+        I thrive on solving complex challenges, mastering emerging technologies, and delivering impactful solutions that drive efficiency and innovation.<br><br>
+        Fluent in English and Spanish.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills & Knowledge Section -->
+  <section id="skills" class="section">
+    <div class="container resume-section reveal">
+      <h2>Skills & Knowledge</h2>
+      
+      <!-- Tabs Layout (for larger screens) -->
+      <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab active" onclick="openTab(event, 'interests')">Interests</button>
+          <button class="tab" onclick="openTab(event, 'networking')">Networking</button>
+          <button class="tab" onclick="openTab(event, 'technologies')">Technologies</button>
+          <button class="tab" onclick="openTab(event, 'os')">Operating Systems</button>
+          <button class="tab" onclick="openTab(event, 'hardware')">Hardware</button>
+          <button class="tab" onclick="openTab(event, 'crm')">CRM & Ticketing</button>
+          <button class="tab" onclick="openTab(event, 'communication')">Communication</button>
+          <button class="tab" onclick="openTab(event, 'soft')">Soft Skills</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="interests" class="tab-content active">
+          <ul>
+            <li>System Engineering</li>
+            <li>Dev/Ops</li>
+            <li>APIs</li>
+            <li>Identity & Access Management</li>
+            <li>Automation</li>
+            <li>Large Language Models</li>
+          </ul>
+        </div>
+        <div id="networking" class="tab-content">
+          <ul>
+            <li>TCP/IP</li>
+            <li>DNS</li>
+            <li>DHCP</li>
+            <li>OSI Model</li>
+            <li>Firewalls</li>
+            <li>IP Filtering (NSGs)</li>
+            <li>Virtualization</li>
+          </ul>
+        </div>
+        <div id="technologies" class="tab-content">
+          <ul>
+            <li>Windows</li>
+            <li>Azure Cloud</li>
+            <li>Microsoft 365</li>
+            <li>AWS</li>
+            <li>Intune</li>
+            <li>GitHub</li>
+            <li>Generative AI</li>
+          </ul>
+        </div>
+        <div id="os" class="tab-content">
+          <ul>
+            <li>Windows</li>
+            <li>MacOS</li>
+            <li>Android</li>
+            <li>iOS</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+        <div id="hardware" class="tab-content">
+          <ul>
+            <li>Mobile Device Repairs</li>
+            <li>PC Hardware Assembly</li>
+            <li>Hardware Diagnosis</li>
+          </ul>
+        </div>
+        <div id="crm" class="tab-content">
+          <ul>
+            <li>Salesforce</li>
+            <li>Zendesk</li>
+            <li>ServiceNow</li>
+          </ul>
+        </div>
+        <div id="communication" class="tab-content">
+          <ul>
+            <li>Slack</li>
+            <li>Outlook</li>
+            <li>Microsoft Teams</li>
+            <li>Cisco Jabber</li>
+          </ul>
+        </div>
+        <div id="soft" class="tab-content">
+          <ul>
+            <li>Active Listening</li>
+            <li>Empathy</li>
+            <li>Clear Communication</li>
+            <li>Adaptability</li>
+            <li>Conflict Resolution</li>
+            <li>Reliability</li>
+            <li>Resilience</li>
+            <li>Resourcefulness</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion Layout (for smaller screens) -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header active">Interests</button>
+          <div class="accordion-content active">
+            <ul>
+              <li>System Engineering</li>
+              <li>Dev/Ops</li>
+              <li>APIs</li>
+              <li>Identity & Access Management</li>
+              <li>Automation</li>
+              <li>Large Language Models</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Networking</button>
+          <div class="accordion-content">
+            <ul>
+              <li>TCP/IP</li>
+              <li>DNS</li>
+              <li>DHCP</li>
+              <li>OSI Model</li>
+              <li>Firewalls</li>
+              <li>IP Filtering (NSGs)</li>
+              <li>Virtualization</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Technologies</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Windows</li>
+              <li>Azure Cloud</li>
+              <li>Microsoft 365</li>
+              <li>AWS</li>
+              <li>Intune</li>
+              <li>GitHub</li>
+              <li>Generative AI</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Operating Systems</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Windows</li>
+              <li>MacOS</li>
+              <li>Android</li>
+              <li>iOS</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Hardware</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Mobile Device Repairs</li>
+              <li>PC Hardware Assembly</li>
+              <li>Hardware Diagnosis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">CRM & Ticketing</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Salesforce</li>
+              <li>Zendesk</li>
+              <li>ServiceNow</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Communication</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Slack</li>
+              <li>Outlook</li>
+              <li>Microsoft Teams</li>
+              <li>Cisco Jabber</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Soft Skills</button>
+          <div class="accordion-content">
+            <ul>
+              <li>Active Listening</li>
+              <li>Empathy</li>
+              <li>Clear Communication</li>
+              <li>Adaptability</li>
+              <li>Conflict Resolution</li>
+              <li>Reliability</li>
+              <li>Resilience</li>
+              <li>Resourcefulness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="reveal">Work Experience</h2>
+      <div class="experience-item reveal">
+        <h3>Desktop Configuration Analyst II</h3>
+        <p><strong>Tekstream Solutions, Atlanta, GA</strong> — November 2024 - Present</p>
+        <p><em>Assigned to Chick-Fil-A Inc - Contract</em></p>
+        <ul class="list">
+          <li>Configured and deployed enterprise 4000+ laptops and mobile devices using MDM tools like Intune, Microsoft Autopilot, and Entra in hybrid environments.</li>
+          <li>Ensured security compliance by auditing devices with Intune, Workspace ONE, Carbon Black, and Azure Security Center.</li>
+          <li>Managed IT requests, device staging, and inventory through ServiceNow.</li>
+          <li>Led Hardware Asset Management (HAM) initiatives to improve tracking and lifecycle management.</li>
+          <li>Streamlined operations with IT documentation and provisioning guides.</li>
+          <li>Provided credential management support with SailPoint and Entra ID.</li>
+          <li>Collaborated on cross-functional projects to enhance hybrid cloud infrastructure.</li>
+        </ul>
+      </div>
+      <div class="experience-item reveal">
+        <h3>Bilingual Technical Support Specialist</h3>
+        <p><strong>CDE Inc., Marietta, GA</strong> — July 2024 - November 2024</p>
+        <ul class="list">
+          <li>Provided technical support for EBT, WIC, ECC, and POS systems.</li>
+          <li>Troubleshot hardware, software, and network issues.</li>
+          <li>Resolved merchant inquiries efficiently using CRM and ticketing systems.</li>
+          <li>Maintained performance metrics and collaborated with internal teams.</li>
+          <li>Processed equipment orders as needed.</li>
+        </ul>
+      </div>
+      <div class="experience-item reveal">
+        <h3>Bilingual Technical Support Analyst</h3>
+        <p><strong>Assurant, Atlanta, GA</strong> — June 2022 - July 2024</p>
+        <ul class="list">
+          <li>Provided bilingual technical support primarily for T-Mobile customers.</li>
+          <li>Supported multiple operating systems including Microsoft, MacOS, Android, and iOS.</li>
+          <li>Diagnosed and resolved incidents across various platforms.</li>
+          <li>Utilized remote access tools for efficient support.</li>
+        </ul>
+      </div>
+      <div class="experience-item reveal">
+        <h3>Bilingual Medical Collections & Billing Agent</h3>
+        <p><strong>Hollis Cobb Associates, Atlanta, GA</strong> — April 2021 - June 2022</p>
+        <ul class="list">
+          <li>Managed accounts receivable for Northside, Well Star, and Grady hospitals.</li>
+          <li>Handled an average of 200 calls per day in collections.</li>
+          <li>Secured patient payments using strict security protocols.</li>
+          <li>Coordinated with the AR department for insurance claim submissions.</li>
+        </ul>
+      </div>
+      <div class="experience-item reveal">
+        <h3>Field Repair Technician for Device Insurance Claims</h3>
+        <p><strong>Asurion, Atlanta, GA</strong> — October 2019 - April 2021</p>
+        <ul class="list">
+          <li>Performed 1000+ certified repairs on mobile devices across multiple brands.</li>
+          <li>Provided on-site support and repair services for device insurance claims.</li>
+          <li>Managed repairs, sales, and POS system operations.</li>
+          <li>Mentored new hires to improve team competency.</li>
+        </ul>
+      </div>
+      <div class="experience-item reveal">
+        <h3>Mobile Device and Computer Technician</h3>
+        <p><strong>uBreakiFix, Duluth, GA</strong> — July 2019 - October 2019</p>
+        <ul class="list">
+          <li>Repaired 500+ mobile electronics and computers.</li>
+          <li>Conducted authorized repairs using official parts and software.</li>
+          <li>Managed back-of-house operations.</li>
+          <li>Provided leadership support when needed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section">
+    <div class="container resume-section reveal">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 1">
+          <h3>Project Title 1</h3>
+          <p>Short description for project 1.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 2">
+          <h3>Project Title 2</h3>
+          <p>Short description for project 2.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="portfolio-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 3">
+          <h3>Project Title 3</h3>
+          <p>Short description for project 3.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <div class="container resume-section reveal">
+      <h2>Education</h2>
+      <p><strong>SAE Institute of Technology</strong> — Diploma in Audio Engineering (2012-2013)</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/j-sebastian-mateus" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/sebwebdeb" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <p class="footer-text">Let's Connect! © 2025 J. Sebastian Mateus</p>
+      </div>
+    </div>
+  </footer>
+<script src="js/script.js"></script>
+</body>
+</html>

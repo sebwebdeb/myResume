@@ -1,0 +1,34 @@
+name: Deploy Azure Function App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install Azure Functions Core Tools
+        run: npm install -g azure-functions-core-tools@4 --unsafe-perm true
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./email-function
+
+      - name: Publish to Azure Function App
+        run: func azure functionapp publish sendemailtosebas
+        env:
+          AZURE_WEBJOBS_STORAGE: ${{ secrets.AZURE_WEBJOBS_STORAGE }}
+          FUNCTIONS_WORKER_RUNTIME: node
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+        working-directory: ./email-function

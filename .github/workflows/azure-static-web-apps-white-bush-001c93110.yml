@@ -28,7 +28,7 @@ jobs:
           action: "upload"
           # Set these according to your project structure:
           app_location: "/"              # static site files location (index.html, css, js)
-          api_location: "email-function" # folder containing your API (adjust if needed)
+          api_location: "email-function/sendEmail" # folder containing your API (adjust if needed)
           output_location: "."           # optional: output folder if you have a build step
 
   close_pull_request_job:

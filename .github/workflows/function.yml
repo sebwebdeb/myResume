@@ -39,9 +39,13 @@ jobs:
 
       - name: Publish Azure Function App
         working-directory: ./email-function
-        run: func azure functionapp publish sendEmailToSebas
+        run: func azure functionapp publish sendemailtosebas
         env:
-          AZURE_WEBJOBS_STORAGE: ${{ secrets.AZURE_WEBJOBS_STORAGE }}
+          AZURE_WEBJOBS_STORAGE: ${{ secrets.AZUREWEBJOBSSTORAGE }}
           FUNCTIONS_WORKER_RUNTIME: node
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+
+          # lets see if this works 
+
+

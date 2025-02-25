@@ -54,7 +54,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   };
   
   try {
-    const response = await fetch("sendemailtosebas.azurewebsites.net", {
+    const response = await fetch("https://sendemailtosebas.azurewebsites.net/api/sendEmail?", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)

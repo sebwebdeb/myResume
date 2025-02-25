@@ -15,8 +15,13 @@ revealOnScroll();
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return; // Add this check for '#' links
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) { // Add null check
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 

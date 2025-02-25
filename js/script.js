@@ -1,4 +1,3 @@
-
 // Reveal on Scroll
 const reveals = document.querySelectorAll('.reveal');
 function revealOnScroll() {
@@ -54,23 +53,31 @@ document.getElementById('contactForm').addEventListener('submit', async function
   };
   
   try {
-    const response = await fetch("https://sendemailtosebas.azurewebsites.net/api/sendEmail?", {
+    console.log('Sending form data:', formData); // Debug log
+    
+    const response = await fetch("https://sendemailtosebas.azurewebsites.net/api/sendEmail", { // Removed the ? at the end
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(formData)
     });
   
+    console.log('Response status:', response.status); // Debug log
     const result = await response.text();
-    // Immediately alert success once the email is sent
-    alert(result);
+    console.log('Response text:', result); // Debug log
     
-    // Immediately reset the form and re-enable the button
+    if (!response.ok) {
+      throw new Error(`Server responded with ${response.status}: ${result}`);
+    }
+    
+    alert(result);
     form.reset();
     submitButton.textContent = originalButtonText;
     submitButton.disabled = false;
   } catch (error) {
-    console.error("Error sending email:", error);
-    alert("There was an error sending your message. Please try again later.");
+    console.error("Detailed error:", error);
+    alert(`Error details: ${error.message}`);
     submitButton.textContent = originalButtonText;
     submitButton.disabled = false;
   }

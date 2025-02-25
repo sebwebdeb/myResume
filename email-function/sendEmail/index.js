@@ -1,25 +1,33 @@
 const nodemailer = require('nodemailer');
 
 module.exports = async function (context, req) {
+  context.log('JavaScript HTTP trigger function processing a request.');
+  
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     context.res = {
       status: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*",            // Allow all origins (or restrict to your domain)
-        "Access-Control-Allow-Methods": "POST, OPTIONS",   // Allow POST and OPTIONS methods
-        "Access-Control-Allow-Headers": "Content-Type"     // Allow the Content-Type header
+        "Access-Control-Allow-Origin": "https://www.sebastianmateus.com",  // Your specific domain
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Max-Age": "86400"  // 24 hours
       }
     };
     return;
   }
 
+  // Add logging to debug environment variables
+  context.log('Checking environment variables:');
+  context.log('EMAIL_USER exists:', !!process.env.EMAIL_USER);
+  context.log('EMAIL_PASS exists:', !!process.env.EMAIL_PASS);
+  
   // Validate the incoming request
   if (!req.body || !req.body.name || !req.body.email || !req.body.subject || !req.body.message) {
     context.res = {
       status: 400,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "https://www.sebastianmateus.com"
       },
       body: "Please provide name, email, subject and message in the request body."
     };
@@ -65,18 +73,22 @@ module.exports = async function (context, req) {
     context.res = {
       status: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "https://www.sebastianmateus.com",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
       },
       body: "Email sent successfully!"
     };
   } catch (error) {
-    context.log('Error sending email:', error);
+    context.log.error('Detailed error:', error);
     context.res = {
       status: 500,
       headers: {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "https://www.sebastianmateus.com",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
       },
-      body: "Error sending email: " + error.toString()
+      body: `Error sending email: ${error.message}`
     };
   }
 };
